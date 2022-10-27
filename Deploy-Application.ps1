@@ -159,7 +159,7 @@ Try {
 		$ActiveSetupRegParentPath = 'HKLM:\Software\Microsoft\Active Setup\Installed Components'
 		$ActiveSetupRegPath = "HKLM:\Software\Microsoft\Active Setup\Installed Components\SetupCiscoAnyConnectPrefs"
 		If(-Not(Test-Path -Path $ActiveSetupRegPath)){
-			New-Item -Path $ActiveSetupRegParentPath -Name $regKey -Force | Out-Null
+			New-Item -Path $ActiveSetupRegParentPath -Name 'SetupCiscoAnyConnectPrefs' -Force | Out-Null
 		}
 		Set-ItemProperty -Path $ActiveSetupRegPath -Name '(Default)' -Value 'Users Preferences for Cisco AnyConnect' -Force
 		Set-ItemProperty -Path $ActiveSetupRegPath -Name 'Version' -Value '1' -Force
@@ -298,8 +298,8 @@ Catch {
 # SIG # Begin signature block
 # MIIU9wYJKoZIhvcNAQcCoIIU6DCCFOQCAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
 # gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
-# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUH3u1DiUeobkIebO5K+ULlDsK
-# yfagghHXMIIFbzCCBFegAwIBAgIQSPyTtGBVlI02p8mKidaUFjANBgkqhkiG9w0B
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUGODtv/LbaJMRW3jafJsh8XDR
+# QOGgghHXMIIFbzCCBFegAwIBAgIQSPyTtGBVlI02p8mKidaUFjANBgkqhkiG9w0B
 # AQwFADB7MQswCQYDVQQGEwJHQjEbMBkGA1UECAwSR3JlYXRlciBNYW5jaGVzdGVy
 # MRAwDgYDVQQHDAdTYWxmb3JkMRowGAYDVQQKDBFDb21vZG8gQ0EgTGltaXRlZDEh
 # MB8GA1UEAwwYQUFBIENlcnRpZmljYXRlIFNlcnZpY2VzMB4XDTIxMDUyNTAwMDAw
@@ -399,13 +399,13 @@ Catch {
 # ZSBTaWduaW5nIENBIFIzNgIRAKVN33D73PFMVIK48rFyyjEwCQYFKw4DAhoFAKB4
 # MBgGCisGAQQBgjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQB
 # gjcCAQQwHAYKKwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwIwYJKoZIhvcNAQkE
-# MRYEFBFzl44rxlngOoPhqd2rV9mlhgACMA0GCSqGSIb3DQEBAQUABIIBgHIzb1eB
-# 0EZtWsMXapyzz9wywd0hiKhhBGnbxDvv/T+rPo5F8kVJh/CLg3CUaHADocWUZmWN
-# qd8XqBp4AqA989MRB1lMIfronArYZXTaSg4WdlMcglZ/JfOyyQQxSbuNaUqkmEWm
-# d7VWdhDKbBFZQv7uvlLt3AjDJb5Wn7NRRiPBKUjhJK5aMkYcf6GreQRDQmXjvR+k
-# TYkTocb2aUWE50Xv8uOrj3WePkKb/gkeYBGwIQGfVEijDX30r4Z4MpMYtIlu+RDU
-# RcdElmz0bW80EqBlWQcZJtIocjF+9/JJXil+r7c4VaIUo38SJvUXn+tbXUcWd+7q
-# vcTOMprIdAVmhXJhm2HyFlDKkkFUH+o7ZSNSvu73E24uhHSjG3W1Z26oO0fxsPf3
-# CwMrRmP34HWGU7GatrIM81cer92AfcK4sVBkCR5Can0tPe9r+xxk7BV5/vZV/cuT
-# 2ooVbihJiUFvM55WG/fFJhHVXCsPxzFByUynNAn5rAkpxbCkcoi9w57AeQ==
+# MRYEFEFz9Jh/xn6d9wLjYVKYuQDhXdVWMA0GCSqGSIb3DQEBAQUABIIBgHxIrwCc
+# ig0w1ZrX1ifONp90Uz8jVkO0awJ9srYKELX2SL3NF8miMEL9YxSeGCT4sj89UB5d
+# L2CfKohkPFdwFTa/GZCsyJZaSV9N80Q4MQsao0kkB6OLYgYs63qfQEmJFop3qlJZ
+# 8mQsnKPWJTXLk70nN8pKDNKKc0XMvetHMHPwqYTX3nA4+B5vFNNz6AaIRlcBe7mR
+# SDqvWfOy9DLVN6G18UGrN/ksnsulTTQ/Pkg2FAeJ2PtBYAE+3jxuzwHRcnWCd1E1
+# rN7g6jSJk9wOcotLr1Zs58I083hzJKcm+HQdVNh+d6Ot5JxE/Io1h56F0genADpn
+# DsXeBVJ4Y6INYxtzRXe3iaG9xukuobfN9hpMy4QWzwM0RIbP6XK+6mXvCzUbYrsI
+# 8f7cAqcOSfRKv4KG+N0LadidX5FmxMb3+QEbePy3KIgrM2ERUhHrm516KsFU+BDh
+# Ik3CODCEV5fJQTpFwnhaOf/N7tJ/jdsDuQbXJgLdtMwaGaBlqqUvGe4A+g==
 # SIG # End signature block
